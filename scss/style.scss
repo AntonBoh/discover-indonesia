@@ -133,10 +133,20 @@ body {
 }
 
 .discover {
+  position: relative;
   margin-bottom: 730px;
   display: flex;
   justify-content: center;
   margin-top: 200px;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -880px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 77.78%);
+    z-index: -1;
+  }
   &__content {
     margin-bottom: 125px;
     padding-left: 20px;
@@ -145,7 +155,6 @@ body {
   }
 
   &__title {
-    // padding-left: 100px;
     line-height: 25px;
     letter-spacing: 6px;
     text-transform: uppercase;
@@ -190,6 +199,16 @@ body {
 
 .holiday {
   margin-bottom: 250px;
+  // position: relative;
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   z-index: 100;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 77.78%);
+  // }
   &__wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -241,7 +260,7 @@ body {
   }
   &__item {
     width: 100%;
-    min-height: 985px;
+    height: 100vh;
     display: flex;
     align-items: flex-end;
     background-image: url(../img/bg-slide.jpg);
@@ -374,34 +393,62 @@ body {
     margin-bottom: 100px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
   &__info-title {
     font-weight: 700;
     font-size: 36px;
     line-height: 49px;
+    margin-bottom: 50px;
   }
 
   &__form {
+    max-width: 400px;
   }
 
   &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 
   &__link-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: $orange-l;
   }
 
   &__link {
+    font-weight: 400;
+    font-size: 19px;
+  }
+  &__input {
   }
 }
-.container {
-}
 .form {
+  position: relative;
   &__input {
+    padding: 0 30px 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 330px;
+    color: $white;
+    &::placeholder {
+      opacity: 0.5;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      color: $white;
+    }
   }
 
   &__btn {
+    width: 70px;
+    height: 70px;
+    background-color: $orange;
+    border-radius: 8px 8px 0px 0px;
+    position: absolute;
+    bottom: 0;
+    right: -20px;
   }
 }
 .privacy-socials {
